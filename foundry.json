@@ -1,0 +1,22 @@
+{
+    "name": "my-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": {
+        "backend": "backend/main.py",
+        "frontend": "frontend/dist/index.js"
+    },
+    "scripts": {
+        "dev": "npx concurrently \"npm run dev --prefix frontend\" \"uvicorn main:app --app-dir backend --reload\"",
+        "build": "npm run build --prefix frontend",
+        "start": "npx concurrently \"npm run dev --prefix frontend\" \"uvicorn main:app --app-dir backend\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "type": "fastapi-react",
+    "host": {
+        "frontend": "http://localhost:5173",
+        "backend": "http://localhost:8000"
+    }
+}
